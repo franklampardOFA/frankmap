@@ -1,4 +1,9 @@
-// ==========================
+// Force mobile GPS accuracy
+const geoOptions = {
+    enableHighAccuracy: true,
+    timeout: 10000,
+    maximumAge: 0
+};// ==========================
 // DOM REFERENCES (MOBILE SAFE)
 // ==========================
 const searchInput = document.getElementById("searchInput");
@@ -149,12 +154,32 @@ function resolveLocation(q) {
 // GPS (MOBILE HARDENED)
 // ==========================
 function locateUser() {
-    if (!navigator.geolocation) return alert("GPS not supported");
+    if (!navigator.geolocation) {
+        alert("Geolocation not supported");
+        return;
+    }
 
     navigator.geolocation.watchPosition(
-        handleLocation,
-        err => console.warn("GPS error", err),
-        { enableHighAccuracy: true, maximumAge: 10000 }
+        (position) => {
+            const lat = position.coords.latitude;
+            const lng = position.coords.longitude;
+
+            map.setView([lat, lng], 16);
+
+            if (!marker) {
+                marker = L.marker([lat, lng]).addTo(map);
+            } else {
+                marker.setLatLng([lat, lng]);
+            }
+
+            document.getElementById("status").innerText =
+                `📍 Lat: ${lat.toFixed(5)}, Lng: ${lng.toFixed(5)}`;
+        },
+        (error) => {
+            document.getElementById("status").innerText =
+                "Waiting for GPS signal...";
+        },
+        geoOptions
     );
 }
 
