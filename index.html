@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Futuristic Mapping App</title>
+
+    <!-- ✅ MOBILE VIEWPORT (MUST be separate, not inside link tag) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- Leaflet CSS -->
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+
+    <!-- Your CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>FRANK'S Mapping Application</h1>
+
+    <!-- Single location search -->
+    <div id="search-container">
+        <input 
+            type="text" 
+            id="searchInput" 
+            placeholder="Search place (e.g. hospital, Nairobi)"
+        />
+        <button id="searchBtn">Search</button>
+        <p id="status"></p>
+    </div>
+
+    <!-- Distance & Direction section -->
+    <div id="distance-container">
+        <input type="text" id="fromInput" placeholder="From (e.g. Nairobi)">
+        <input type="text" id="toInput" placeholder="To (e.g. Mombasa)">
+        <button id="distanceBtn">Distance & Direction</button>
+        <p id="distanceResult"></p>
+    </div>
+
+    <!-- Map -->
+    <div id="map"></div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- App JS -->
+    <script src="app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,142 @@
+/* =========================
+   GLOBAL
+========================= */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #0a0f1d;
+    color: #00bfff;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+/* Prevent mobile auto-zoom */
+input, button {
+    font-size: 16px;
+}
+
+/* =========================
+   HEADER
+========================= */
+h1 {
+    margin: 6px 0 10px;
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+
+#header {
+    padding: 12px 0 8px;
+    background: linear-gradient(to bottom, #020617, #0a0f1d);
+    border-bottom: 1px solid #00bfff;
+}
+
+/* =========================
+   SEARCH & DISTANCE SECTIONS
+========================= */
+#search-container,
+#distance-container {
+    margin: 8px 0;
+}
+
+/* Inputs */
+#searchInput,
+#distance-container input {
+    padding: 10px;
+    width: 90%;
+    max-width: 320px;
+    margin: 5px auto;
+    display: block;
+    border: none;
+    outline: none;
+    background-color: #020617;
+    color: #00bfff;
+    border-bottom: 2px solid #00bfff;
+}
+
+/* Buttons */
+#searchBtn,
+#distanceBtn {
+    padding: 10px 18px;
+    margin: 6px auto;
+    display: block;
+    background-color: transparent;
+    color: #00bfff;
+    border: 1px solid #00bfff;
+    cursor: pointer;
+}
+
+#searchBtn:hover,
+#distanceBtn:hover {
+    background-color: #00bfff;
+    color: #020617;
+}
+
+/* Status text */
+#status,
+#distanceResult {
+    margin-top: 6px;
+    font-size: 14px;
+    color: #66d9ff;
+}
+
+/* =========================
+   MAP
+========================= */
+#map {
+    width: 100%;
+    height: calc(100vh - 260px);
+    border-top: 1px solid #00bfff;
+}
+
+/* =========================
+   EFFECTS
+========================= */
+
+/* Glow marker */
+.glow-marker {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background: #00bfff;
+    box-shadow: 0 0 15px #00bfff, 0 0 30px #00bfff;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.8); opacity: 0.7; }
+    50% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(0.8); opacity: 0.7; }
+}
+
+/* Animated route line */
+.animated-line {
+    stroke-dasharray: 6, 10;
+    animation: dash 1s linear infinite;
+}
+
+@keyframes dash {
+    to { stroke-dashoffset: -16; }
+}
+
+/* Arrow icon */
+.arrow-icon {
+    width: 20px;
+    height: 20px;
+    background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" fill="cyan" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L15 8H9L12 2ZM12 22V10"/></svg>') no-repeat center;
+    background-size: contain;
+}
+🧹 DELETE THESE FROM YOUR PROJECT
+❌ Remove from CSS
+
+Duplicate #map blocks
+
+Fixed widths (250px, 200px)
+
+❌ Remove from JS
+
+css
+Copy code
+input, button {
+    font-size: 16px;
+}
